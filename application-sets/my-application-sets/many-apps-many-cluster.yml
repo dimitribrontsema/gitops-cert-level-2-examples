@@ -12,7 +12,7 @@ spec:
               repoURL: https://github.com/argoproj/argo-cd.git
               revision: HEAD
               directories:
-                - path: applicationset/examples/matrix/cluster-addons/*
+                - path: applicationset/examples-apps/*
           # cluster generator, 'child' #2
           - clusters:
               selector:
@@ -22,7 +22,7 @@ spec:
     metadata:
       name: '{{path.basename}}-{{name}}'
     spec:
-      project: '{{metadata.labels.environment}}'
+      project: default
       source:
         repoURL: https://github.com/argoproj/argo-cd.git
         targetRevision: HEAD
